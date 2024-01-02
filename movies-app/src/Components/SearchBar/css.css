@@ -1,0 +1,51 @@
+.search-bar-container{
+    min-height: 10vh;
+    margin: auto;
+    width: 40%;
+    background-color:gray;
+    margin-top: 2%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-bar{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    min-height: 7vh;
+    width: 95%;
+    margin: auto;
+    border-radius: 10px;
+    margin-top: auto;
+    justify-content: space-around;
+}
+
+.search-bar > .icon{
+    flex: 2;
+    margin: auto;
+    text-align: center;
+}
+
+.search-bar > .text-field-container{
+    flex: 8;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-field{
+    flex: 1;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    font-size: large;
+    margin-left: 2px;
+}
+
+.text-field:focus{
+    outline: none;
+}
+
+.text-field:hover{
+    cursor: text;
+}
