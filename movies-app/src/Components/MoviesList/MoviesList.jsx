@@ -1,21 +1,16 @@
 import React from 'react';
 import './css.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import SearchBar from '../SearchBar/Searchbar';
+import MovieCard from '../MovieCard/MovieCard';
 
 const MoviesList = (props) => {
     return (
-        <div>
+        <div className='movies-container'>
             {
-                props.movies.map((item, index) => (
-                    <div key={index}>
-                        {item.title}
-                    </div>
+                props.movies.map((movie, index) => (
+                    <MovieCard key = {index} myMovie = {movie}/>
                 ))
             }
         </div>
     );
 };
-
 export default MoviesList;
