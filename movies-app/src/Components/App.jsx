@@ -23,6 +23,15 @@ const App  = () => {
     setTotalPages(total);
   }
 
+  //state for the search string
+  const [search , setSearch] = useState("");
+
+  //function to handle the string change
+  const handleSearchChange = (str) => {
+    setSearch(str);
+  }
+
+
   return (
     <div >
         {/* Browser router so we can navigate from route to route */}
@@ -31,6 +40,8 @@ const App  = () => {
             <Routes>
                 <Route path="/" element={
                 <MainContainer 
+                search = {search}
+                handleSearchChange = {handleSearchChange}
                 handlePageChange={handlePageChange} 
                 currentPage = {currentPage}
                 totalPages = {totalPages}

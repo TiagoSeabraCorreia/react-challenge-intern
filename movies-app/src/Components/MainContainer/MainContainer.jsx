@@ -11,11 +11,8 @@ import { Movie } from '../../utils.js';
 const MainContainer = (props) => {
   //state for the array of movies
   const [movies, setMovies] = useState([]);
-  //state for the search string
-  const [search , setSearch] = useState("");
   //state for the error message
   const [errorMessage , setErrorMessage] = useState("");
-
   //when the component is first created we fetch the data
   //from the TMDB api
   useEffect(() => {
@@ -41,7 +38,7 @@ const MainContainer = (props) => {
         //console.log(moviesData);
         props.handlePageChanges(moviesData.total_pages)
         moviesData.results.forEach ((movie) => {
-          if(movie.original_title.includes(search) === true){
+          if(movie.original_title.includes(props.search) === true){
             var currentMovie = new Movie(
               movie.original_title, 
               movie.poster_path, 
@@ -57,18 +54,13 @@ const MainContainer = (props) => {
         setErrorMessage(error);
       });
   }
-
-  //function to handle the string change
-  const handleSearchChange = (str) => {
-    setSearch(str);
-  }
-
+  
   return ( 
     <div className='main-container'>
         <MoviesScreen
           errorMessage = {errorMessage}
-          handleSearchChange  = {handleSearchChange}
-          search = {search}
+          handleSearchChange  = {props.handleSearchChange}
+          search = {props.search}
           currentPage = {props.currentPage}
           totalPages = {props.totalPages}
           movies = {movies} 
