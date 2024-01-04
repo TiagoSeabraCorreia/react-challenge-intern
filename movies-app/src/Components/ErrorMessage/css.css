@@ -1,0 +1,13 @@
+
+/* error message css */
+.error{
+    margin:auto;
+    color:red;
+}
+
+/* container for the error message */
+.error-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}

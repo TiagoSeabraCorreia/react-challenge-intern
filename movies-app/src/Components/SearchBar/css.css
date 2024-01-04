@@ -1,25 +1,33 @@
+
+/* css for the search bar container */
 .search-bar-container{
-    min-height: 10vh;
+    min-height: 8.2vh;
     margin: auto;
-    width: 40%;
-    background-color:gray;
+    width: 30%;
     margin-top: 2%;
-    border-radius: 20px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
+    background-color: white;
 }
 
+
+/* css for the search bar */
 .search-bar{
     display: flex;
     flex-direction: row;
-    background-color: white;
-    min-height: 7vh;
-    width: 95%;
+    min-height: 8vh;
+    width: 90%;
     margin: auto;
-    border-radius: 10px;
+    border: 2px solid gainsboro;
+    padding: 10px;
+    border-radius: 50px;
     margin-top: auto;
     justify-content: space-around;
 }
+
+
+/* css for the search bar icon */
 
 .search-bar > .icon{
     flex: 2;
@@ -27,12 +35,20 @@
     text-align: center;
 }
 
+/* css for the search bar icon when hovering */
+.search-bar > .icon:hover {
+    cursor: pointer;
+}
+
+
+/* css for the text-field container */
 .search-bar > .text-field-container{
     flex: 8;
     display: flex;
     flex-direction: column;
 }
 
+/* css for the text field */
 .text-field{
     flex: 1;
     width: 100%;
@@ -42,10 +58,13 @@
     margin-left: 2px;
 }
 
+/* remove the ouline */
 .text-field:focus{
     outline: none;
 }
 
+
+/* change the cursor when hovering the text field */
 .text-field:hover{
     cursor: text;
 }

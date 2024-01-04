@@ -1,30 +1,31 @@
 import React from 'react';
 import './css.css'
-import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const SearchBar = (props) => {
-    const [movieName, setMovieName] = useState("")
 
+    //Handler to change the value when the user types
     const handleTyping = (event) => {
-        setMovieName(event.target.value)
+        props.handleSearchChange(event.target.value);
     }
 
+
+    //Handler to search for new movies
     const handleSearch = () => {
-        props.handleMovieSearch(movieName)
+        props.handleMovieSearch()
     }
 
-    // Some logic or data
+
     return (
         <div className='search-bar-container'>
 
         <div className='search-bar'>
 
             <div className='text-field-container'>
-                <input type='text' onChange={handleTyping} value={movieName} className = 'text-field' placeholder='Search for a movie...'/>
+                <input type='text' onChange={handleTyping} value={props.search} className = 'text-field' placeholder='Search for a movie...'/>
             </div>
-
+            
             <div className='icon' onClick={handleSearch}>
             <FontAwesomeIcon icon={faSearch} size='2x'/>        
             </div>

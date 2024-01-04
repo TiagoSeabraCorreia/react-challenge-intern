@@ -1,29 +1,52 @@
-.movie-card-holder 
-{
-    background-color: black;
-}
-
+/* css for the whole card */
 .movie-card{
-    text-align: center;
     display: flex;
     flex-direction: column;
     border-radius: 20px;
-    background-color: white ;
     max-width: 90%;
-    max-height: 60%;
     margin-top: 2%;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 2%;
+    min-width: 10%;
 }
 
-.movie-card > img{
+/* css for the image */
+.image-holder > img{
+    max-width: 100%;
+    border-radius: 10px;
+    transition: scale 0.5s;
+    box-shadow: 10px 10px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* css for the date */
+.image-holder{
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
     margin: auto;
-    width: 20rem;
-    border-radius: 20px;
-    transition: width 0.5s;
 }
 
-.movie-card > .title{
-    font-size: larger;
+/* animation when hovering the movie card */
+.image-holder > img:hover{
+    scale:80%;
+    border-radius: 10px;
+    cursor: pointer;    
+}
+
+/* css for the title */
+.movie-card > .normal-title{
+    flex: 2;
+    font-size: large;
+    display: block;
+    text-align: center;
+    max-width: 100%;
+    margin: auto;
+    margin-bottom: 5%;
+}
+
+
+/* css for the date */
+.date{
+    margin: auto;
+    margin-bottom: 2%;
 }

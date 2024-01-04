@@ -1,0 +1,10 @@
+
+/* css for the genre gummie */
+.gummie {
+    border-radius: 10px;
+    background-color: gray;
+    color: white;
+    width: fit-content;
+    padding: 5px;
+    height: fit-content;
+}

@@ -1,16 +1,18 @@
 import React from 'react';
 import './css.css';
-import MovieCard from '../MovieCard/MovieCard';
+import NormalMovieCard from '../NormalMovieCard/NormalMovieCard';
 
 const MoviesList = (props) => {
     return (
         <div className='movies-container'>
             {
+                //a card is created for every movie that is in our data
                 props.movies.map((movie, index) => (
-                    <MovieCard key = {index} myMovie = {movie}/>
+                    <NormalMovieCard key = {index} myMovie = {movie}/>
                 ))
             }
         </div>
     );
 };
+
 export default MoviesList;

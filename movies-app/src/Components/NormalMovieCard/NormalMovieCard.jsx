@@ -1,19 +1,31 @@
 import React from 'react';
 import './css.css';
+import { useNavigate } from "react-router-dom";
 
-const NormalMovieCard = (props) => {
-    const myMovie = props.myMovie;
+function NormalMovieCard (props) {
+    
+    const myMovie = props.myMovie; 
+    const navigator = useNavigate();
+
+    //handler to change the route when a movie card is clicked
+    const handleMovieClick  = (event) => {
+        navigator("movieInfo/"+myMovie.id);
+    }
+
     return (
-        <div className = 'movie-card-holder'>
-            <div className='movie-card'>
-            <div className='title'>
+        <div className='movie-card'>
+            <div className='normal-title'>
                 {myMovie.title}
             </div>
-            <img src={myMovie.imgUrl} />
+            <div className='date'>
+                {myMovie.launchDate}
+            </div>
+            <div className = 'image-holder'>
+                <img src={myMovie.imgUrl} onClick={handleMovieClick}/>
             </div>
         </div>
-        
     );
+
 };
 
 export default NormalMovieCard;

@@ -1,8 +1,11 @@
+
+/* container for the movie cards */
 .movies-container {
+    margin-top: 2%;
     display: grid;
     margin: auto;
     padding: 20px;
-    background-color: aliceblue;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
 }
+

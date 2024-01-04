@@ -1,0 +1,11 @@
+
+/* the container for the like button */
+.like-button-container{
+    flex: 2;
+    margin: auto;
+}
+
+/* when we hover the like button its a pointer cursor */
+.pointer:hover{
+    cursor: pointer;
+}

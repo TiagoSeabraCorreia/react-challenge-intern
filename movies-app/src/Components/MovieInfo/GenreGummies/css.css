@@ -1,0 +1,9 @@
+/* css for the gummie container */
+.gummie-container{
+    flex: 1;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-top: 10%;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto  auto auto ;
+}

@@ -1,0 +1,92 @@
+/* we give the full height and width to the page */
+.info-page{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+/*  Display message when data is beeing fethced*/
+.fetching{
+    margin-top: 50vh;
+    text-align: center;
+}
+
+/* a container to position the back button */
+.go-back-container{
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+
+/* when we hover the back button the cursor is a pointer */
+.go-back-container:hover{
+    cursor: pointer;
+}
+
+/* the image container on the left side of the page */
+.image-container {
+    flex:  5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* a container for the rating under the image */
+.rating-container {
+    flex:  1;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+/* css to position the text away from the icon */
+.rating-text{
+    margin-left: 5px;
+}
+
+/* css to make the title of the movie bigger */
+.info-page-title {
+    margin: auto;
+    font-size: xx-large;
+    text-align: center;
+
+}
+
+/* css for the overview of the movie */
+.info-page-overview {
+   
+    margin: auto;
+    font-size: large;
+    flex: 2;
+    text-align: justify;
+    margin-top: 10%;
+}
+
+/* css for the release date */
+.info-page-date{
+    flex:0.2;
+    margin: auto;
+    margin-top: 2%;
+}
+
+/* css for the image to fit in the left side of the page */
+.image-container > img{
+    margin: auto;
+    width: 50vh;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+/*  the container on the right side with the information */
+.information-container{
+    padding: 20px;
+    padding-right: 40px;
+    flex:5;
+    display: flex;
+    flex-direction: column;
+
+}
