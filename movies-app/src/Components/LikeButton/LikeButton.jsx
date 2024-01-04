@@ -9,7 +9,6 @@ const LikeButton  = (props) => {
 
     //use effect to load the data when when the 
     //component is first created
-
     useEffect(() => {
         loadData();
     }, []);

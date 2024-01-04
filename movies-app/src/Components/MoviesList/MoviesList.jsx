@@ -8,7 +8,7 @@ const MoviesList = (props) => {
             {
                 //a card is created for every movie that is in our data
                 props.movies.map((movie, index) => (
-                    <NormalMovieCard key = {index} myMovie = {movie}/>
+                    <NormalMovieCard page={props.currentPage} key = {index} myMovie = {movie}/>
                 ))
             }
         </div>

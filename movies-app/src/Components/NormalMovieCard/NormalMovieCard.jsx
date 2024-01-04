@@ -9,7 +9,7 @@ function NormalMovieCard (props) {
 
     //handler to change the route when a movie card is clicked
     const handleMovieClick  = (event) => {
-        navigator("movieInfo/"+myMovie.id);
+        navigator("movieInfo/"+myMovie.id+"&page="+props.page);
     }
 
     return (

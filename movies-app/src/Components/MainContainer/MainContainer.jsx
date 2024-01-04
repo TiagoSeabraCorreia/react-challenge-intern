@@ -8,13 +8,9 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import { Movie } from '../../utils.js';
 
-const MainContainer = ({}) => {
+const MainContainer = (props) => {
   //state for the array of movies
   const [movies, setMovies] = useState([]);
-  //state for the total of pages available for the pagination
-  const [totalPages, setTotalPages] = useState(0);
-  //state for the number of the current page
-  const [currentPage, setCurrentPage] = useState(1);
   //state for the search string
   const [search , setSearch] = useState("");
   //state for the error message
@@ -24,18 +20,7 @@ const MainContainer = ({}) => {
   //from the TMDB api
   useEffect(() => {
     handleMovieSearch();
-  }, [currentPage]);
-
-  /**
-   * Function to handle the page change, it is necessary to make sure the
-   * page number exists
-   * 
-   * @param {number} pageIncrement 
-   */
-  const handlePageChange = (increment) =>{
-    if((currentPage + increment) > 0 && (currentPage + increment) <= totalPages)
-      setCurrentPage(currentPage + increment);
-  }
+  }, [props.currentPage]);
 
   /**
    * 
@@ -48,13 +33,13 @@ const MainContainer = ({}) => {
   const handleMovieSearch = () => {
     var aux = [];
     var moviesData = []; 
-    const url = 'https://api.themoviedb.org/3/movie/popular?language=en-US&page='+currentPage;
+    const url = 'https://api.themoviedb.org/3/movie/popular?language=en-US&page='+props.currentPage;
     options.url = url;
     axios.request(options)
       .then(function (response) {
         moviesData = response.data;
         //console.log(moviesData);
-        setTotalPages(moviesData.total_pages)
+        props.handlePageChanges(moviesData.total_pages)
         moviesData.results.forEach ((movie) => {
           if(movie.original_title.includes(search) === true){
             var currentMovie = new Movie(
@@ -77,18 +62,18 @@ const MainContainer = ({}) => {
   const handleSearchChange = (str) => {
     setSearch(str);
   }
-  
+
   return ( 
     <div className='main-container'>
         <MoviesScreen
           errorMessage = {errorMessage}
           handleSearchChange  = {handleSearchChange}
           search = {search}
-          currentPage = {currentPage}
-          totalPages = {totalPages}
+          currentPage = {props.currentPage}
+          totalPages = {props.totalPages}
           movies = {movies} 
           handleMovieSearch = {handleMovieSearch}
-          handlePageChange = {handlePageChange}
+          handlePageChange = {props.handlePageChange}
          />
     </div>
   );

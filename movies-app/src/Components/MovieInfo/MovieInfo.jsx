@@ -13,17 +13,17 @@ import { faArrowLeft, faStar } from '@fortawesome/free-solid-svg-icons';
 
 const MovieInfo  = () => {
   //useParams(); to get the movieId from the url
-  const { movieId } = useParams();
+  const { movieId , page} = useParams();
   //state for the selected movie
   const [myMovie, setMyMovie] = useState(null);
   //state of the loading message
   const [isLoading, setLoading] = useState(true);
   //navigator so we can move from route to route
   const navigator = useNavigate();
-
+  
   //handler for the back button
   function handleGoBack (event){
-    navigator("/");
+    window.history.back();
   }
 
   //auxiliary function to get the array of the genres

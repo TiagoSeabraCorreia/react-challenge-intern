@@ -16,7 +16,7 @@ const MoviesScreen = (props) => {
         handleSearchChange = {props.handleSearchChange} 
         handleMovieSearch = {props.handleMovieSearch}>
       </SearchBar>
-      <MoviesList movies = {props.movies}>
+      <MoviesList currentPage={props.currentPage} movies = {props.movies}>
       </MoviesList>
       
       <Pagination  
